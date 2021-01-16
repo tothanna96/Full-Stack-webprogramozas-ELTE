@@ -1,0 +1,71 @@
+<h2>Új recept hozzáadása</h2>
+<form [formGroup]="recipeForm"  (ngSubmit)="addMyRecipe(recipeForm)" novalidate>
+	<div fxLayout="row wrap" fxLayoutAlign="start start">
+
+		<mat-form-field appearance="fill" fxFlex="100">
+			<mat-label>Recept címe</mat-label>
+      <input matInput type="text" formControlName="title">
+      <mat-error>A mező kitöltése kötelező!</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill" fxFlex="100">
+			<mat-label>Recept hozzávalói</mat-label>
+      <textarea matInput type="text" formControlName="ingredients"></textarea>
+      <mat-error>A mező kitöltése kötelező!</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill" fxFlex="100">
+			<mat-label>Recept elkészítésének leírása</mat-label>
+      <textarea matInput type="text" formControlName="instructions"></textarea>
+      <mat-error>A mező kitöltése kötelező!</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill" fxFlex="100">
+			<mat-label>Recept kategóriája</mat-label>
+			<mat-select formControlName="category">
+				<mat-option value="SOUP">Előétel</mat-option>
+				<mat-option value="MAINCOURSE">Főétel</mat-option>
+				<mat-option value="DESSERT">Desszert</mat-option>
+      </mat-select>
+      <mat-error>A mező kitöltése kötelező!</mat-error>
+		</mat-form-field>
+
+		<mat-form-field appearance="fill" fxFlex="100">
+			<mat-label>Recept elérhetősége</mat-label>
+			<mat-select formControlName="status">
+				<mat-option value="PUBLIC">Publikus</mat-option>
+				<mat-option value="PRIVATE">Privát</mat-option>
+      </mat-select>
+      <mat-error>A mező kitöltése kötelező!</mat-error>
+		</mat-form-field>
+
+		<!-- <mat-form-field appearance="fill" fxFlex="100">
+			<mat-chip-list #chipList aria-keyword="Keyword selection">
+				<mat-chip
+					*ngFor="let keyword of keywords"
+					[selectable]="true"
+					[removable]="false"
+				>
+				{{ keyword }}
+				</mat-chip>
+				<input
+					placeholder="Új kulcsszó..."
+					#keywordInput
+					[formControl]="keywordCtrl"
+					[matAutocomplete]="auto"
+					[matChipInputFor]="chipList"
+					[matChipInputSeparatorKeyCodes]="separatorKeysCodes"
+					(matChipInputTokenEnd)="keywordAdd($event)"
+				>
+			</mat-chip-list>
+			<mat-autocomplete #auto="matAutocomplete" (optionSelected)="keywordSelected($event)">
+				<mat-option *ngFor="let keyword of filteredKeywords | async" [value]="keyword">
+					{{ keyword }}
+				</mat-option>
+			</mat-autocomplete>
+		</mat-form-field> -->
+
+		<button mat-raised-button color="warn">Hozzáad</button>
+
+	</div>
+</form>

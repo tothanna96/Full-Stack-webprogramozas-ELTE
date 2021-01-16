@@ -1,0 +1,23 @@
+jobs:
+  include:
+
+  - language: java
+    jdk: openjdk8
+    cache:
+      directories:
+        - $HOME/.m2
+
+    before_install: cd receptkonyv
+    install: true
+
+    script: mvn -B test 
+
+    deploy:
+      skip_cleanup: true
+      provider: heroku
+      api_key:
+        secure: "F/NAJqVVAzOaU8HM4lZVtiF+fnjMevvy9RMNVpivRcAG88Jp+PzULLZjWIhj2GcMHfnxBsA0AYyqDsQRtxPjS0TnjWYzhhW0r22NX37z+7v5OOh+TObVZTZ5nUV2oU5l2XRHp+KuexgAnca8aA2vwjMCNM+neE8MamLmSa8nRbozllOeQUitd6UABC57qeMA3ULj5aW5uYwYkC4D69wR7ZJOq8M2CH3KGqHnTue/nxPhyhM2c/8s6yvmVjX7I87jd5q79u2ew0BZeM3ZpghV2Jb8qP6+uY3ujqiUI3Za1kdB0KXsrtjlXtVHZtDc8l7eQoUOMlTGIDxYuFUXr9W1hehH2jRWb8mJBaK0Oa6ihJl4vg//VhBYi7HBlEDgurxdr/UW0YYbHw2LBHExGRI90a+NP2Z94h+E7rxh4eAj6AFRtdgnbHZy1EYWzdtl0Num+s+UocOFGGDx9ipfovDVWDs5jYrW4J2AMmv0LFUKmTRVX3Y7T/6tJGpp3QUkUbrJ0hYBGBqF8U/98nhX6D5Sx6e2rO5LHX8Oe46N7XlJ8WYHTdyoK/240VM9Fhznm/p4jqCIQnhR5ZiBaPBJjfAsoh2j+UtBoNAZU+oHcG74B12UkDiQJenYZwjvS5hfh92N6saZYQmEaEAgQv3FvcfK+ed2bv9TAhbzmYs9dERvcpU="
+      app: receptkonyvapp
+      on: 
+        branch: main
+        jdk: openjdk8

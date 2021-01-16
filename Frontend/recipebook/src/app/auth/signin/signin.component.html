@@ -1,0 +1,27 @@
+<form [formGroup]="signinForm" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="signin(signinForm)" ovalidate>
+    <mat-form-field>
+        <input
+            matInput
+            type="text"
+            placeholder="Felhasználónév"
+            color="warn"
+            formControlName="username"
+            required
+        >
+        <mat-error>A mező kitöltése kötlező!</mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input
+            matInput
+            type="password"
+            placeholder="Jelszó"
+            color="warn"
+            formControlName="password"
+            required
+        >
+        <mat-error>A mező kitöltése kötlező!</mat-error>
+    </mat-form-field>
+    <button mat-raised-button color="warn">Bejelentkezés</button>
+    <button mat-raised-button style="margin-top: 20px;" routerLink="/recipes/open" color="warn">Böngészés vendégként</button>
+
+</form>

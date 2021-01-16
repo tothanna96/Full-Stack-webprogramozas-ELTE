@@ -1,0 +1,27 @@
+<mat-card class="card">
+  <mat-list role="list">
+      <mat-list-item role="listitem">
+          <mat-icon mat-list-icon>local_dining</mat-icon>
+          {{recipe?.title}}
+      </mat-list-item>
+  </mat-list>
+</mat-card>
+
+<mat-card class="card1">
+<mat-tab-group mat-align-tabs="start">
+
+  <mat-tab label="Hozzávalók">
+    <ul>
+      <li *ngFor= "let item of ingredientsToList(recipe?.ingredients)">
+        {{item}}
+      </li>
+    </ul>
+  </mat-tab>
+
+  <mat-tab label="Elkészítés">
+    {{recipe?.instructions}}
+  </mat-tab>
+
+</mat-tab-group>
+</mat-card>
+

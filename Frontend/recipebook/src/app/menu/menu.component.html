@@ -1,0 +1,14 @@
+<mat-list>
+	<mat-list-item routerLink="/recipes/open" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" matRipple>
+		<span class="material-icons">import_contacts</span>
+		<h4 mat-line>Receptek</h4>
+	</mat-list-item>
+	<mat-list-item routerLink="/myrecipes/closed" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" matRipple>
+		<span class="material-icons">folder_shared</span>
+		<h4 mat-line>Saját receptek</h4>
+  </mat-list-item>
+	<mat-list-item  (click)="logout()" matRipple> <!--*ngIf="(isLoggedIn$ | async)" == ez azt csinálná hogy ha kijelentkezek eltűnik ez a menüpont de nem működik vmiért-->
+		<span class="material-icons">logout</span>
+		<h4 mat-line>Kijelentkezés</h4>
+	</mat-list-item>
+</mat-list>

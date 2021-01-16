@@ -1,0 +1,22 @@
+<div fxLayoutAlign="center center" fxFlexFill>
+
+    <mat-card fxFlex="30">
+        <mat-toolbar color="warn" fxLayoutAlign="center center">RECEPTKÖNYV FELHASZNÁLÓ</mat-toolbar>
+
+        <mat-tab-group mat-stretch-tabs color="warn">
+
+            <mat-tab>
+                <ng-template mat-tab-label >
+                <mat-icon class="example-tab-icon">person</mat-icon>Bejelentkezés</ng-template>
+                  <app-signin></app-signin>
+            </mat-tab>
+
+            <mat-tab>
+                <ng-template mat-tab-label>
+                <mat-icon class="example-tab-icon">text_snippet</mat-icon>Regisztráció</ng-template>
+                  <app-signup></app-signup>
+            </mat-tab>
+
+        </mat-tab-group>
+    </mat-card>
+</div>

@@ -1,0 +1,47 @@
+<form [formGroup]="signupForm" fxLayoutAlign="stretch" fxLayout="column" (ngSubmit)="signup(signupForm)" [ngClass]="{'up': password.value.length > 0}" novalidate>
+    <mat-form-field>
+        <input
+            matInput
+            type="text"
+            placeholder="Felhasználónév"
+            formControlName="username"
+            required
+            appNameFormat
+        >
+    </mat-form-field>
+    <mat-form-field hintLabel="Megfelelő formátum: nev@inf.elte.hu">
+         <input
+            matInput
+            type="email"
+            placeholder="E-mail cím"
+            formControlName="email"
+            required
+        >
+    </mat-form-field>
+    <mat-form-field hintLabel="Legalább 6 karakter hosszú">
+        <input
+            matInput
+            #password
+            type="password"
+            placeholder="Jelszó"
+            color="primary"
+            formControlName="password"
+            required
+        >
+    </mat-form-field>
+    <mat-form-field>
+        <input
+            matInput
+            type="password"
+            placeholder="Jelszó ismétlés"
+            formControlName="passwordConfirm"
+            required>
+    </mat-form-field>
+    <button
+        mat-raised-button
+        color="warn"
+        style="margin:15px 0 0 0"
+    >
+        Regisztráció
+    </button>
+</form>

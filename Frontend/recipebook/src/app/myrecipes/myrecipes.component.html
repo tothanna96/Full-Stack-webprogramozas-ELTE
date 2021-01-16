@@ -1,0 +1,30 @@
+<h2>Saját receptjeim:</h2>
+
+<mat-grid-list class="scroll-hide" cols="3" rowHeight="22rem">
+  <mat-grid-tile
+  *ngFor= "let recipe of (rs.recipes$ | async)">
+  <mat-card class="inline-block">
+    <mat-card-header>
+      <mat-card-title>
+        <a [routerLink]="['/recipe/', recipe.id]">
+          <button class="titlebutton" mat-raised-button color="warn">{{recipe.title}}</button>
+        </a>
+      </mat-card-title>
+    </mat-card-header>
+      <img mat-card-image [src]="'../assets/images/'+recipe.image+'.jpg'" alt="Photo of this recipe" >
+      <button mat-mini-fab color="warn" class="del-button" (click)="rs.deleteRecipe(recipe?.id)" matTooltip="Recept törlése">
+        <span class="material-icons">
+          delete_outline
+        </span>
+      </button>
+  </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+<button mat-mini-fab color="warn" class="add-button" (click)="openAddMyRecipeDialog()" matTooltip="Új recept">
+	<span class="material-icons">
+		add_circle
+  </span>
+</button>
+
+

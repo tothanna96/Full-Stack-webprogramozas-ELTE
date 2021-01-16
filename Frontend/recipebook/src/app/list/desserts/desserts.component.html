@@ -1,0 +1,18 @@
+
+<mat-grid-list cols="3" rowHeight="22rem">
+  <mat-grid-tile
+  *ngFor="let recipe of (rs.recipesByCat | async)">
+  <mat-card class="inline-block">
+    <mat-card-header>
+      <mat-card-title>
+        <a [routerLink]="['/recipe/', recipe.id]">
+          <button mat-raised-button color="warn">{{recipe.title}}</button>
+        </a>
+      </mat-card-title>
+    </mat-card-header>
+    <img mat-card-image [src]="'../assets/images/'+recipe.image+'.jpg'" alt="Photo of a main Foods">
+  </mat-card>
+
+  </mat-grid-tile>
+</mat-grid-list>
+
